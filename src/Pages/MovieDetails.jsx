@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { TiStarFullOutline } from "react-icons/ti";
+import { useContext } from "react";
+import { context } from "../context";
 
-export default function MovieDetails({ movies, setMovies }) {
+export default function MovieDetails() {
   const [userReview, setUserReview] = useState("");
   const [rate, setRate] = useState();
   const [rating, setRating] = useState();
 
+  const { movies, setMovies } = useContext(context);
   const { id } = useParams();
   const navigate = useNavigate();
 

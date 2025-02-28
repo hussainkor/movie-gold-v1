@@ -4,9 +4,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { TiStarFullOutline } from "react-icons/ti";
+import { useContext } from "react";
+import { context } from "../context";
 
-export default function Hero({ movies }) {
+export default function Hero() {
   const [index, setIndex] = useState(0);
+
+  const { movies } = useContext(context);
+
   const { title, trailerLink, poster, backdrops, reviewIds, imdbId } =
     movies[index];
 
